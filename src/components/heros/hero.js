@@ -9,7 +9,16 @@ const device = {
   md: "43em",
 }
 
+const HeroGrid = styled.div`
+  display: grid;
+  grid-template-rows: auto 4em auto;
+`
+
 const HeroWrapper = styled.div`
+  grid-row: 1 / span 2;
+  grid-column: 1 / -1;
+  z-index: 1;
+
   background: url("../../images/hero.jpg"), rgba(0, 0, 0, 0.7);
   background-blend-mode: overlay;
   background-position: center;
@@ -33,46 +42,22 @@ const Text = styled.div`
   width: 100%;
 `
 
-const Img = styled.div`
-  @media screen and (max-width: 48em) {
-    display: none;
-  }
-`
+const HeroBottomText = styled.div`
+  grid-row: 2 / -1;
+  grid-column: 1 / -1;
+  z-index: 2;
 
-const ListFlex = styled.div`
-  display: flex;
-
-  isplay: flex;
-  @media screen and (max-width: 46em) {
-    flex-direction: column;
-  }
-
-  & > * {
-    width: 100%;
-  }
-
-  & > * + * {
-    margin-left: 2em;
-
-    @media screen and (max-width: 46em) {
-      margin-left: 0;
-      margin-top: var(--spacer);
-    }
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    text-transform: capitalize;
-    list-style-type: none;
-  }
+  background: var(--clr-dark);
+  color: var(--txt-light);
+  padding: 2em;
+  width: 80%;
 `
 
 export default function HeroBasic() {
   return (
-    <HeroWrapper>
-      <Container>
-        <Flex>
+    <HeroGrid>
+      <HeroWrapper>
+        <Container>
           <Text className="spacing">
             <div>
               <p className="subheader">your personal paradise starts here</p>
@@ -80,8 +65,19 @@ export default function HeroBasic() {
             </div>
             <ButtonPrimary to="/contact">get free estimate</ButtonPrimary>
           </Text>
-        </Flex>
-      </Container>
-    </HeroWrapper>
+        </Container>
+      </HeroWrapper>
+      <HeroBottomText>
+        <Container>
+          <p>
+            Transform your outdoor space into a serene haven with our unique
+            landscaping services. From custom design to expert installation, our
+            team of experts will help you create a personalized and functional
+            living space that showcases your personality and style. Get started
+            with your transformation today!
+          </p>
+        </Container>
+      </HeroBottomText>
+    </HeroGrid>
   )
 }

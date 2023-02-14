@@ -35,7 +35,7 @@
   --clr-light-secondary: #F0F0F0;
   --clr-accent: #2FB814;
   --clr-accent-lighter: #41b12b;
-  --clr-accent-darker: #22b404;
+  --clr-accent-darker: #209c07;
   --clr-overlay: rgba(0, 0, 0, 0.6);
   --clr-overlay-darker: rgba(0, 0, 0, 0.8);
 
@@ -120,7 +120,7 @@ hr {
   font-size: var(--fs-1);
   font-weight: var(--fw-400);
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .subheader {
