@@ -3,6 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { Container, Section } from "../layoutComponents"
 import { Link } from "gatsby"
+import { ButtonPrimary } from "../buttons"
 
 const Text = styled.div`
   max-width: 110ch;
@@ -182,6 +183,7 @@ export default function AllServicesBanner() {
             <div className="overlay"></div>
           </ItemLink>
         </GridAuto>
+        <ButtonPrimary to="">view all services</ButtonPrimary>
       </Container>
     </Section>
   )

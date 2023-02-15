@@ -106,7 +106,7 @@ export const FlexMobileOpp = styled.div`
 
     @media screen and (max-width: ${device.md}) {
       margin-left: 0;
-      margin-top: var(--spacer);
+      margin-bottom: var(--spacer);
     }
   }
 `

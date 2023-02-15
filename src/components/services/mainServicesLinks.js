@@ -52,6 +52,7 @@ const Bg = styled.div`
 const ItemLink = styled(props => <Link {...props} />)`
   background: var(--clr-dark);
   color: var(--txt-light);
+  text-decoration: none;
 
   div {
     padding: 1em;
@@ -91,7 +92,7 @@ export default function MainServicesLinks() {
               <div>
                 <h3 className="subheader">hardscaping</h3>
                 <ButtonUnderline className="service-button" to="">
-                  read more
+                  read more &#8594;
                 </ButtonUnderline>
               </div>
             </ItemLink>
@@ -103,7 +104,7 @@ export default function MainServicesLinks() {
               <div>
                 <h3 className="subheader">softscaping</h3>
                 <ButtonUnderline className="service-button" to="">
-                  read more
+                  read more &#8594;
                 </ButtonUnderline>
               </div>
             </ItemLink>
@@ -115,7 +116,7 @@ export default function MainServicesLinks() {
               <div>
                 <h3 className="subheader">outdoor services</h3>
                 <ButtonUnderline className="service-button" to="">
-                  read more
+                  read more &#8594;
                 </ButtonUnderline>
               </div>
             </ItemLink>
