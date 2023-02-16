@@ -1,35 +1,30 @@
+import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
-
-import { Info } from "../info"
 import { Container } from "../layoutComponents"
-import { ButtonInline } from "../buttons"
-
-import Logo from "../../images/project-landscape-logo-light.svg"
-import AaronTonnerWebSolutionsLogo from "../../images/aaron-tonner-web-solutions-logo-white-white.svg"
 import Facebook from "../../images/socials/facebook.svg"
 import Instagram from "../../images/socials/instagram.svg"
 import Twitter from "../../images/socials/twitter.svg"
 import Linkedin from "../../images/socials/linkedin.svg"
 import Youtube from "../../images/socials/youtube.svg"
+import { FaPhone, FaRegClock } from "react-icons/fa"
+import { MdLocationOn, MdOutlineEmail } from "react-icons/md"
+import FormFooter from "../forms/formFooter"
+import { Info } from "../info"
 
 const device = {
-  sm: "43em",
   md: "48em",
   lg: "57em",
 }
 
-const FooterWrapper = styled.footer`
-  padding: 4em 0 1em 0;
-  background: var(--clr-dark);
-  color: var(--txt-light);
-`
+const IconStyle = {
+  color: "var(--clr-accent)",
+}
 
-export const Flex = styled.div`
+const Flex = styled.div`
   display: flex;
   img {
-    width: 100%;
+    /* width: 100%; */
   }
   @media screen and (max-width: ${device.md}) {
     flex-direction: column;
@@ -44,17 +39,21 @@ export const Flex = styled.div`
 
     @media screen and (max-width: ${device.md}) {
       margin-left: 0;
-      margin-top: var(--spacer);
+      margin-top: var(--spacer-lg);
     }
   }
 `
 
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    width: 500px;
+const FooterWrapper = styled.footer`
+  padding: 4em 0 1em 0;
+  background: var(--clr-dark);
+
+  h4 {
+    color: var(--txt-light);
+  }
+
+  ul {
+    list-style-type: none;
   }
 `
 
@@ -69,7 +68,7 @@ const Socials = styled.div`
     display: flex;
 
     & > * + * {
-      margin-left: 5px;
+      margin-left: 10px;
     }
   }
 
@@ -78,36 +77,33 @@ const Socials = styled.div`
   }
 `
 
-const FlexContact = styled.div`
-  display: flex;
-  align-items: center;
+const Divider = styled.div`
+  width: 1px;
+  height: 100px;
+  background-color: var(--txt-light);
 
-  & > * + * {
-    margin-left: 5px;
-  }
-
-  a {
-    color: var(--clr-accent);
-    text-decoration: none;
-  }
-
-  p {
-    margin-bottom: 0;
+  @media screen and (max-width: ${device.md}) {
+    display: none;
   }
 `
 
-const FlexItem = styled.div`
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: var(--spacer) 0;
+const ContactLink = styled.a`
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-button);
+  color: var(--txt-light);
+  letter-spacing: 0.1em;
+  transition: all 0.25s linear;
 
-    li {
-      a {
-        color: var(--txt-light);
-        font-weight: var(--fw-500);
-      }
-    }
+  // aligning text with icon
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  :hover,
+  :focus {
+    opacity: 0.7;
   }
 `
 
@@ -116,6 +112,7 @@ const Copyright = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  color: var(--txt-light);
 
   @media screen and (max-width: ${device.lg}) {
     flex-direction: column;
@@ -150,140 +147,123 @@ const Copyright = styled.div`
   }
 `
 
-const StyledLink = styled(props => <Link {...props} />)`
-  text-transform: capitalize;
-  color: var(--txt-light);
-  font-weight: var(--fw-400);
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    opacity: 0.7;
-  }
-`
-
-const Author = styled.div`
-  color: var(--txt-light-secondary);
-
-  div {
-    display: flex;
-    gap: 0.5em;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: right;
-  }
-
-  a {
-    display: inline;
-    color: var(--txt-light-secondary);
-  }
-
-  img {
-    width: 100px;
-  }
-`
-
 export default function Footer() {
   return (
-    <div className="spacing-lg">
-      <FooterWrapper className="spacing">
-        <Container className="spacing-lg">
-          <LogoContainer>
-            <img src={Logo} alt="" />
-          </LogoContainer>
-          <hr />
+    <FooterWrapper>
+      <Container className="spacing">
+        <Flex>
           <Flex>
-            <FlexItem>
-              <p className="heading">contact us</p>
-              <ul>
-                <li>
-                  <FlexContact>
-                    <a href="tel: 403-257-4059">403-257-4059</a>
-                  </FlexContact>
-                </li>
-                <li>
-                  <FlexContact>
-                    <a href="mailto: info@projectlandscape.ca">
-                      info@projectlandscape.ca
-                    </a>
-                  </FlexContact>
-                </li>
-                <li>
-                  <FlexContact>
-                    <p>{Info.hours}</p>
-                  </FlexContact>
-                </li>
-              </ul>
-              <ul>
-                <li>{Info.street1}</li>
-                <li>{Info.city1}</li>
-                <li>Canada</li>
-              </ul>
+            <div className="spacing">
+              <StaticImage
+                width={200}
+                src="../../images/project-landscape-logo-light.svg"
+                alt="project landscape logo - calgary landscape company"
+              />
               <Socials>
                 <div>
                   <a target="_blank" href="">
                     <img src={Facebook} alt="" />
                   </a>
                 </div>
+                <div>
+                  <a target="_blank" href="">
+                    <img src={Instagram} alt="" />
+                  </a>
+                </div>
+                <div>
+                  <a target="_blank" href="">
+                    <img src={Youtube} alt="" />
+                  </a>
+                </div>
               </Socials>
-            </FlexItem>
-            <FlexItem>
-              <p className="heading">quick links</p>
-              <ul>
-                <li>
-                  <StyledLink to="/">home</StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="/about">about</StyledLink>
-                </li>
-
-                <li>
-                  <StyledLink to="/services">services</StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="/contact">contact</StyledLink>
-                </li>
-              </ul>
-            </FlexItem>
-            <FlexItem className="spacing">
-              <p className="heading">about us</p>
-              <p></p>
-            </FlexItem>
-          </Flex>
-          <hr />
-          <Copyright>
-            <ul>
-              <li>Copyright&#169; 2023</li>
-              <li>{Info.name}</li>
-              <li>All Rights Reserved</li>
-              <li>
-                <a target="blank" href="">
-                  Terms of use
-                </a>
-              </li>
-              <li>
-                <a target="blank" href="">
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
-          </Copyright>
-          <hr />
-        </Container>
-        <Author>
-          <Container>
-            <div>
-              <p>website by: </p>
-              <a target="_blank" href="https://www.aarontonner.com">
-                <img
-                  src={AaronTonnerWebSolutionsLogo}
-                  alt="calgary web designer logo"
-                />
-              </a>
             </div>
-          </Container>
-        </Author>
-      </FooterWrapper>
-    </div>
+            <Divider />
+          </Flex>
+          <Flex>
+            <div className="spacing">
+              <div className="spacing">
+                <h4 className="subheader">contact us</h4>
+                <ul>
+                  <li>
+                    <ContactLink href="tel: 403-257-4059">
+                      <div>
+                        <FaPhone style={IconStyle} />
+                      </div>
+                      403-257-4059
+                    </ContactLink>
+                  </li>
+                  <li>
+                    <ContactLink href="mailto: info@projectlandscape.ca">
+                      <div>
+                        <MdOutlineEmail style={IconStyle} />
+                      </div>
+                      info@projectlandscape.ca
+                    </ContactLink>
+                  </li>
+                  <li>
+                    <ContactLink
+                      href="https://www.google.com/search?q=project%20landscape&oq=project+landscape&aqs=chrome..69i57j69i64j69i60l3.2120j0j7&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:14&tbm=lcl&sxsrf=AJOqlzVRUU_ZaNptPsOjzHtILa57paj9uQ:1676341266052&rflfq=1&num=10&rldimm=11747008283103314784&lqi=ChFwcm9qZWN0IGxhbmRzY2FwZUi-z42FnKuAgAhaGxAAEAEYABgBIhFwcm9qZWN0IGxhbmRzY2FwZXoHQ2FsZ2FyeZIBEmxhbmRzY2FwZV9kZXNpZ25lcg&ved=2ahUKEwjnu73t-ZP9AhVKGzQIHdw6BLIQvS56BAgWEAE&sa=X&rlst=f#rlfi=hd:;si:11747008283103314784,l,ChFwcm9qZWN0IGxhbmRzY2FwZUi-z42FnKuAgAhaGxAAEAEYABgBIhFwcm9qZWN0IGxhbmRzY2FwZXoHQ2FsZ2FyeZIBEmxhbmRzY2FwZV9kZXNpZ25lcg;mv:[[50.997355899999995,-113.98204679999999],[50.9522124,-114.01662379999999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14"
+                      target="_blank"
+                    >
+                      <div>
+                        <MdLocationOn style={IconStyle} />
+                      </div>
+                      3511 64 Ave Calgary
+                    </ContactLink>
+                  </li>
+                </ul>
+              </div>
+              <div className="spacing">
+                <h4 className="subheader">showroom</h4>
+                <ul>
+                  <li>
+                    <ContactLink
+                      href="https://www.google.com/search?q=project%20landscape&oq=project+landscape&aqs=chrome..69i57j69i64j69i60l3.2120j0j7&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:14&tbm=lcl&sxsrf=AJOqlzVRUU_ZaNptPsOjzHtILa57paj9uQ:1676341266052&rflfq=1&num=10&rldimm=11747008283103314784&lqi=ChFwcm9qZWN0IGxhbmRzY2FwZUi-z42FnKuAgAhaGxAAEAEYABgBIhFwcm9qZWN0IGxhbmRzY2FwZXoHQ2FsZ2FyeZIBEmxhbmRzY2FwZV9kZXNpZ25lcg&ved=2ahUKEwjnu73t-ZP9AhVKGzQIHdw6BLIQvS56BAgWEAE&sa=X&rlst=f#rlfi=hd:;si:11747008283103314784,l,ChFwcm9qZWN0IGxhbmRzY2FwZUi-z42FnKuAgAhaGxAAEAEYABgBIhFwcm9qZWN0IGxhbmRzY2FwZXoHQ2FsZ2FyeZIBEmxhbmRzY2FwZV9kZXNpZ25lcg;mv:[[50.997355899999995,-113.98204679999999],[50.9522124,-114.01662379999999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14"
+                      target="_blank"
+                    >
+                      <div>
+                        <MdLocationOn style={IconStyle} />
+                      </div>
+                      3511 64 Ave Calgary
+                    </ContactLink>
+                  </li>
+                  <li>
+                    <ContactLink href="#">
+                      <div>
+                        <FaRegClock style={IconStyle} />
+                      </div>
+                      Hours by appointment
+                    </ContactLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <Divider />
+          </Flex>
+          <div>
+            <h4 className="subheader">email us</h4>
+            <FormFooter />
+          </div>
+        </Flex>
+        <hr />
+        <Copyright>
+          <ul>
+            <li>Copyright&#169; 2023</li>
+            <li>{Info.name}</li>
+            <li>All Rights Reserved</li>
+            <li>
+              <a target="blank" href="">
+                Terms of use
+              </a>
+            </li>
+            <li>
+              <a target="blank" href="">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </Copyright>
+      </Container>
+    </FooterWrapper>
   )
 }

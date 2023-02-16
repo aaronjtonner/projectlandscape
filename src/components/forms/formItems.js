@@ -40,6 +40,7 @@ export const Submit = styled.input`
   cursor: pointer;
   width: 100%;
   display: inline-block;
+  font-family: var(--ff-alfa);
   font-size: var(--fs-sm);
   font-weight: var(--fw-button);
   letter-spacing: 0.1em;
