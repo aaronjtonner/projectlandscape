@@ -44,7 +44,7 @@ export default function index() {
       <FaqFeatured />
       <Ebook
         img={EbookImg}
-        alt="calgary landscaping expert advice"
+        alt="calgary landscaping experts advice"
         title="download our landscaping ebook"
         href=""
       />
