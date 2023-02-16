@@ -12,6 +12,13 @@ import ShowroomSection from "../components/sections/showroomSection"
 import MainVideo from "../components/sections/mainVideo"
 import Why from "../components/why"
 import CtaMain from "../components/cta/ctaMain"
+import MainTrends from "../components/trends/mainTrends"
+import FaqFeatured from "../components/faq/faqFeatured"
+import Ebook from "../components/ebook"
+
+import EbookImg from "../images/ph.jpg"
+import MainTestimonials from "../components/testimonials/mainTestimonials"
+import FinanceBanner from "../components/financeBanner"
 
 export default function index() {
   return (
@@ -32,7 +39,17 @@ export default function index() {
       />
       <ShowroomSection />
       <MainVideo />
+      <MainTrends />
       <Why />
+      <FaqFeatured />
+      <Ebook
+        img={EbookImg}
+        alt="calgary landscaping experts advice"
+        title="download our landscaping ebook"
+        href=""
+      />
+      <MainTestimonials />
+      <FinanceBanner />
       <CtaMain
         subheader="your personal paradise starts here"
         title="get started on your outdoor oasis"

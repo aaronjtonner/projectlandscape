@@ -16,7 +16,7 @@ const Text = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 140px auto 2em;
+  grid-template-columns: 2em auto 140px;
   grid-template-rows: 2em auto 2em;
 `
 
@@ -24,8 +24,8 @@ const List = styled.div`
   width: 85%;
   margin: 0 auto;
   max-width: 95rem;
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 2;
+  grid-row: 2 / -1;
+  grid-column: 2 / -1;
   z-index: 2;
 
   display: grid;
@@ -43,8 +43,9 @@ const List = styled.div`
 `
 
 const Bg = styled.div`
-  grid-row: 2 / -1;
-  grid-column: 2 / -1;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+
   z-index: 1;
   background: var(--clr-accent);
 `
@@ -59,17 +60,15 @@ const ItemLink = styled(props => <Link {...props} />)`
   }
 `
 
-export default function MainServicesLinks() {
+export default function MainTrends() {
   return (
     <Section>
       <div className="spacing">
         <Container>
           <Text className="spacing">
             <div>
-              <p className="subheader accent">find the services you need</p>
-              <h2 className="title">
-                bring your landscaping calgary project to life
-              </h2>
+              <p className="subheader accent">title for trends</p>
+              <h2 className="title">title for trends </h2>
             </div>
             <p>
               Your home is your pride and joy, and we are the professionals who
@@ -83,6 +82,7 @@ export default function MainServicesLinks() {
           </Text>
         </Container>
         <Grid>
+          <Bg />
           <List>
             <ItemLink to="">
               <StaticImage
@@ -90,7 +90,7 @@ export default function MainServicesLinks() {
                 alt="calgary hardscaping services"
               />
               <div>
-                <h3 className="subheader">hardscaping</h3>
+                <h3 className="subheader">trend</h3>
                 <ButtonUnderline className="service-button" to="">
                   read more &#8594;
                 </ButtonUnderline>
@@ -102,7 +102,7 @@ export default function MainServicesLinks() {
                 alt="calgary softscaping services"
               />
               <div>
-                <h3 className="subheader">softscaping</h3>
+                <h3 className="subheader">trend</h3>
                 <ButtonUnderline className="service-button" to="">
                   read more &#8594;
                 </ButtonUnderline>
@@ -114,14 +114,13 @@ export default function MainServicesLinks() {
                 alt="outdoor landscaping services calgary"
               />
               <div>
-                <h3 className="subheader">outdoor services</h3>
+                <h3 className="subheader">trend</h3>
                 <ButtonUnderline className="service-button" to="">
                   read more &#8594;
                 </ButtonUnderline>
               </div>
             </ItemLink>
           </List>
-          <Bg />
         </Grid>
       </div>
     </Section>

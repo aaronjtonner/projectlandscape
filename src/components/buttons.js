@@ -91,7 +91,7 @@ export const ButtonSecondaryLight = styled(props => <Link {...props} />)`
   text-decoration: none;
   padding: 1em 1.33em;
   transition: all 0.2s linear;
-
+  text-transform: uppercase;
   background: transparent;
   color: var(--txt-light);
   border: 1px solid var(--txt-light);
@@ -155,6 +155,7 @@ export const ButtonInline = styled(props => <Link {...props} />)`
 export const AnchorPrimary = styled.a`
   cursor: pointer;
   display: inline-block;
+  font-family: var(--ff-alfa);
   font-size: var(--fs-sm);
   font-weight: var(--fw-button);
   letter-spacing: 0.1em;
