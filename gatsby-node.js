@@ -9,7 +9,7 @@ setOptions({
 
 module.exports.createPages = async gatsbyUtilities => {
   await createPages(gatsbyUtilities)
-  await createPosts(gatsbyUtilities)
+  // await createPosts(gatsbyUtilities)
 }
 
 // original
