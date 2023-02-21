@@ -180,7 +180,7 @@ export default function Footer() {
             <Divider />
           </Flex>
           <Flex>
-            <div className="spacing">
+            <div className="spacing-lg">
               <div className="spacing">
                 <h4 className="subheader">contact us</h4>
                 <ul>

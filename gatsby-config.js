@@ -64,5 +64,14 @@ module.exports = {
         isBaseProvider: false,
       },
     },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        url: "http://testingsite2023.innerspiritboudoir.com/graphql",
+        schema: {
+          timeout: 60000,
+        },
+      },
+    },
   ],
 }
