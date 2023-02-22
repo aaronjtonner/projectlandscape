@@ -86,6 +86,71 @@
       }
      
  
+      fragment Page_ComponentC on WpPage_Pagecomponents_PageComponents_ComponentC {
+        
+        subheader
+        title
+        body
+        image {
+            altText
+            localFile {
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+        }
+    
+      }
+     
+ 
+      fragment Page_ComponentD on WpPage_Pagecomponents_PageComponents_ComponentD {
+        
+    subheader
+    title
+    content {
+        text
+    }
+  
+      }
+     
+ 
+      fragment Page_ComponentE on WpPage_Pagecomponents_PageComponents_ComponentE {
+        
+  subheader
+  title
+  content {
+    title
+    description
+    image {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+    
+      }
+     
+ 
+      fragment Page_ImageGallery on WpPage_Pagecomponents_PageComponents_ImageGallery {
+        
+            body
+            title
+            subheader
+            imageGallery {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+    
+      }
+     
+ 
       fragment Page_ImageLeft on WpPage_Pagecomponents_PageComponents_ImageLeft {
         
           subheader
@@ -117,6 +182,17 @@
             }
           }
     
+      }
+     
+ 
+      fragment Page_ProcessA on WpPage_Pagecomponents_PageComponents_ProcessA {
+        
+  title
+  processContent {
+    number
+    processDescription
+  }
+  
       }
      
  
