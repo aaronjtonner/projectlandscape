@@ -36,7 +36,11 @@ export default function Cta1({ subheader, title, body, image }) {
               <p className="subheader">{subheader}</p>
               <h2 className="title">{title}</h2>
             </div>
-            <p>{body}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: `${body}`,
+              }}
+            />
             <ButtonPrimaryDark to="/contact">
               get your quote &#8594;
             </ButtonPrimaryDark>

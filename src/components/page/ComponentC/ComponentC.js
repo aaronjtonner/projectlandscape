@@ -6,7 +6,7 @@ import { ButtonPrimary } from "../../buttons"
 
 const Text = styled.div`
   text-align: center;
-  max-width: 110ch;
+  max-width: 140ch;
   width: 100%;
   margin-right: auto;
   margin-left: auto;

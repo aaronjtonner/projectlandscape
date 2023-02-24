@@ -25,7 +25,7 @@ export default function Badges({ title }) {
   }
   return (
     <Section>
-      <Container className="spacing">
+      <div className="spacing">
         {title ? <h2 className="title center">{title}</h2> : null}
         <Slider {...settings}>
           <StaticImage
@@ -148,7 +148,7 @@ export default function Badges({ title }) {
             objectFit="contain"
           />
         </Slider>
-      </Container>
+      </div>
     </Section>
   )
 }

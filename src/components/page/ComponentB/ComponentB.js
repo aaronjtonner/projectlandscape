@@ -16,7 +16,7 @@ const Text = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 140px auto 2em;
+  grid-template-columns: 2em auto 140px;
   grid-template-rows: 2em auto 2em;
 `
 

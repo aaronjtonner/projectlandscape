@@ -178,6 +178,21 @@
       }
      
  
+      fragment Page_Ebook on WpPage_Pagecomponents_PageComponents_Ebook {
+        
+    title
+    image {
+        altText
+        localFile {
+            childImageSharp {
+                gatsbyImageData
+            }
+        }
+    }
+    
+      }
+     
+ 
       fragment Page_ImageGallery on WpPage_Pagecomponents_PageComponents_ImageGallery {
         
             body
@@ -246,6 +261,20 @@
     processDescription
   }
   
+      }
+     
+ 
+      fragment Page_ProcessB on WpPage_Pagecomponents_PageComponents_ProcessB {
+        
+    title
+    subheader
+    body
+    processContent {
+      number
+      title
+      body
+    }
+    
       }
      
  

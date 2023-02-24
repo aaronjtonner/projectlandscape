@@ -16,7 +16,6 @@ export default function Layout({ children }) {
       <HeaderBasic />
       <main>{children}</main>
       <FaqFeatured />
-      <Ebook title="ebook title" img={EbookImg} />
       <CtaMain title="call to action title" />
       <Footer />
       <Map />
