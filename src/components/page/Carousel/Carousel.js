@@ -1,0 +1,94 @@
+import React from "react"
+import { Container, Section } from "../../layoutComponents"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
+
+const Text = styled.div`
+  text-align: center;
+  max-width: 110ch;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+`
+
+const SliderWrapper = styled.div`
+  .slick-prev:before,
+  .slick-next:before {
+    color: var(--clr-dark);
+    font-size: 22px;
+  }
+`
+
+const SliderItem = styled.div`
+  padding: 0.5em;
+`
+
+export default function Carousel({ subheader, title, carouselContent }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  }
+  return (
+    <Section>
+      <Container>
+        <Text>
+          <div>
+            <p className="subheader accent">{subheader}</p>
+            <h2 className="title">{title}</h2>
+          </div>
+        </Text>
+        <SliderWrapper>
+          <Slider {...settings}>
+            {carouselContent.map(item => {
+              return (
+                <SliderItem>
+                  <GatsbyImage
+                    image={item.image.localFile.childImageSharp.gatsbyImageData}
+                    alt={item.image.altText}
+                  />
+                  <h3 className="subheader">{item.title}</h3>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: `${item.description}`,
+                    }}
+                  />
+                </SliderItem>
+              )
+            })}
+          </Slider>
+        </SliderWrapper>
+      </Container>
+    </Section>
+  )
+}

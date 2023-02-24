@@ -12,6 +12,14 @@ const Text = styled.div`
   margin-left: auto;
 `
 
+const StyledImg = styled(GatsbyImage)`
+  max-height: 500px;
+`
+
+const Item = styled.div`
+  text-align: center;
+`
+
 export default function ComponentE({ subheader, title, content }) {
   return (
     <Section>
@@ -25,8 +33,8 @@ export default function ComponentE({ subheader, title, content }) {
         <GridAuto>
           {content.map(item => {
             return (
-              <div>
-                <GatsbyImage
+              <Item>
+                <StyledImg
                   image={item.image.localFile.childImageSharp.gatsbyImageData}
                   alt={item.image.altText}
                   s
@@ -37,7 +45,7 @@ export default function ComponentE({ subheader, title, content }) {
                     __html: `${item.description}`,
                   }}
                 />
-              </div>
+              </Item>
             )
           })}
         </GridAuto>

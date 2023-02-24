@@ -7,7 +7,7 @@ import { ButtonPrimary } from "../../buttons"
 const Text = styled.div``
 
 const StyledImg = styled(GatsbyImage)`
-  box-shadow: 20px 20px 0px 1px var(--clr-accent);
+  box-shadow: -20px 20px 0px 1px var(--clr-accent);
 `
 
 export default function ImageLeft({ subheader, title, body, image }) {
@@ -18,6 +18,7 @@ export default function ImageLeft({ subheader, title, body, image }) {
           <StyledImg
             image={image.localFile.childImageSharp.gatsbyImageData}
             alt={image.altText}
+            className="stretch"
           />
           <Text className="spacing">
             <div>

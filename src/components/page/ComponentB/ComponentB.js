@@ -24,8 +24,8 @@ const List = styled.div`
   width: 85%;
   margin: 0 auto;
   max-width: 95rem;
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 2;
+  grid-row: 2 / -1;
+  grid-column: 2 / -1;
   z-index: 2;
 
   display: grid;
@@ -35,16 +35,12 @@ const List = styled.div`
   @media screen and (max-width: ${device.md}) {
     grid-template-columns: 1fr;
   }
-
-  & > * {
-    justify-self: center;
-    align-self: center;
-  }
 `
 
 const Bg = styled.div`
-  grid-row: 2 / -1;
-  grid-column: 2 / -1;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+
   z-index: 1;
   background: var(--clr-accent);
 `
@@ -104,16 +100,20 @@ export default function ComponentB({ subheader, title, body, componentItems }) {
                   />
                   <div>
                     <h3 className="subheader">{item.title}</h3>
-                    {/* <p
-                      dangerouslySetInnerHTML={{
-                        __html: `${item.text}`,
-                      }}
-                    />
-                    <Button
-                      dangerouslySetInnerHTML={{
-                        __html: `${item.button}`,
-                      }}
-                    /> */}
+                    {item.text ? (
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: `${item.text}`,
+                        }}
+                      />
+                    ) : null}
+                    {item.button ? (
+                      <Button
+                        dangerouslySetInnerHTML={{
+                          __html: `${item.button}`,
+                        }}
+                      />
+                    ) : null}
                   </div>
                 </Item>
               )

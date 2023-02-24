@@ -30,6 +30,7 @@ export default function ImageRight({ subheader, title, body, image }) {
           <StyledImg
             image={image.localFile.childImageSharp.gatsbyImageData}
             alt={image.altText}
+            className="stretch"
           />
         </Flex>
       </Container>

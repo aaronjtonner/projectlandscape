@@ -4,6 +4,13 @@
     export const componentFragments = graphql`
        
  
+      fragment Page_Badges on WpPage_Pagecomponents_PageComponents_Badges {
+        
+      title
+    
+      }
+     
+ 
       fragment Page_Banner on WpPage_Pagecomponents_PageComponents_Banner {
         
         title
@@ -38,6 +45,26 @@
       }
     }
   }
+  
+      }
+     
+ 
+      fragment Page_Carousel on WpPage_Pagecomponents_PageComponents_Carousel {
+        
+    subheader
+    title
+    carouselContent {
+      title
+      description
+      image {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
   
       }
      
@@ -134,6 +161,23 @@
       }
      
  
+      fragment Page_Cta1 on WpPage_Pagecomponents_PageComponents_Cta1 {
+        
+  body
+  title
+  subheader
+  image {
+    altText
+    localFile {
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
+  }
+    
+      }
+     
+ 
       fragment Page_ImageGallery on WpPage_Pagecomponents_PageComponents_ImageGallery {
         
             body
@@ -185,6 +229,15 @@
       }
      
  
+      fragment Page_ImageSlider on WpPage_Pagecomponents_PageComponents_ImageSlider {
+        
+    subheader
+    title
+    body
+  
+      }
+     
+ 
       fragment Page_ProcessA on WpPage_Pagecomponents_PageComponents_ProcessA {
         
   title
@@ -193,6 +246,60 @@
     processDescription
   }
   
+      }
+     
+ 
+      fragment Page_TabsSide on WpPage_Pagecomponents_PageComponents_TabsSide {
+        
+    title
+    tabsContent {
+      tabTitle
+      tabList
+      tabLabel
+      tabBody
+      tabImage {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+    
+      }
+     
+ 
+      fragment Page_TabsTop on WpPage_Pagecomponents_PageComponents_TabsTop {
+        
+  title
+  tabsContent {
+    tabTitle
+    tabList
+    tabLabel
+    tabBody
+    tabImage {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+  
+      }
+     
+ 
+      fragment Page_Testimonial on WpPage_Pagecomponents_PageComponents_Testimonial {
+        
+    title
+    testimonials {
+        testimonialBody
+        testimonialTitle
+        testimonialName
+    }
+    
       }
      
  

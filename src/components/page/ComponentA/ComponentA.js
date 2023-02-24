@@ -35,11 +35,6 @@ const List = styled.div`
   @media screen and (max-width: ${device.md}) {
     grid-template-columns: 1fr;
   }
-
-  & > * {
-    justify-self: center;
-    align-self: center;
-  }
 `
 
 const Bg = styled.div`
@@ -104,16 +99,20 @@ export default function ComponentA({ subheader, title, body, componentItems }) {
                   />
                   <div>
                     <h3 className="subheader">{item.title}</h3>
-                    {/* <p
-                      dangerouslySetInnerHTML={{
-                        __html: `${item.text}`,
-                      }}
-                    />
-                    <Button
-                      dangerouslySetInnerHTML={{
-                        __html: `${item.button}`,
-                      }}
-                    /> */}
+                    {item.text ? (
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: `${item.text}`,
+                        }}
+                      />
+                    ) : null}
+                    {item.button ? (
+                      <Button
+                        dangerouslySetInnerHTML={{
+                          __html: `${item.button}`,
+                        }}
+                      />
+                    ) : null}
                   </div>
                 </Item>
               )

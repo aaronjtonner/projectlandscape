@@ -12,10 +12,15 @@ const Text = styled.div`
   margin-left: auto;
 `
 
+const StyledImg = styled(GatsbyImage)`
+  max-height: 500px;
+  width: 80%;
+`
+
 export default function ComponentC({ subheader, title, body, image }) {
   return (
     <Section>
-      <Container className="spacing">
+      <Container className="spacing center">
         <Text className="spacing">
           <div className="">
             <p className="subheader accent">{subheader}</p>
@@ -27,10 +32,12 @@ export default function ComponentC({ subheader, title, body, image }) {
             }}
           />
         </Text>
-        <GatsbyImage
-          image={image.localFile.childImageSharp.gatsbyImageData}
-          alt={image.altText}
-        />
+        {image ? (
+          <StyledImg
+            image={image.localFile.childImageSharp.gatsbyImageData}
+            alt={image.altText}
+          />
+        ) : null}
         <center>
           <ButtonPrimary to="/contact">talk to us today</ButtonPrimary>
         </center>

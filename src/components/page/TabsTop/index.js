@@ -1,1 +1,1 @@
-export { default } from "./TabsTops"
+export { default } from "./TabsTop"

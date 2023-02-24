@@ -102,7 +102,7 @@ export const FlexMobileOpp = styled.div`
   }
 
   & > * + * {
-    margin-left: 2em;
+    margin-left: 4em;
 
     @media screen and (max-width: ${device.md}) {
       margin-left: 0;

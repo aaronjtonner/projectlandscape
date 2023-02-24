@@ -10,7 +10,7 @@ const Text = styled.div`
 
 const ListBox = styled.div``
 
-export default function TabsTops({ title, tabsContent }) {
+export default function TabsTop({ title, tabsContent }) {
   return (
     <Section>
       <Container>

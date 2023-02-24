@@ -5,14 +5,20 @@ import { ButtonPrimary } from "../../buttons"
 import { Container, GridThree, Section } from "../../layoutComponents"
 
 const StyledImg = styled(GatsbyImage)`
-  max-height: 150px;
-  max-width: 150px;
+  max-height: 100px;
+  max-width: 100px;
+`
+
+const BenefitItem = styled.div`
+  box-shadow: var(--shadow-light);
+  padding: 2em;
+  border-radius: var(--br);
 `
 
 export default function Benefits1({ subheader, title, benefitContent }) {
   return (
     <Section>
-      <Container className="spacing">
+      <Container className="spacing-md">
         <div className="center">
           <p className="subheader accent">{subheader}</p>
           <h2 className="title">{title}</h2>
@@ -20,20 +26,20 @@ export default function Benefits1({ subheader, title, benefitContent }) {
         <GridThree>
           {benefitContent.map(benefit => {
             return (
-              <div className="spacing">
+              <BenefitItem className="spacing center">
                 <StyledImg
                   image={
                     benefit.image.localFile.childImageSharp.gatsbyImageData
                   }
                   alt={benefit.image.altText}
                 />
-                <h3 className="body--large caps">{benefit.title}</h3>
+                <h3 className="subheader caps">{benefit.title}</h3>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: `${benefit.description}`,
                   }}
                 />
-              </div>
+              </BenefitItem>
             )
           })}
         </GridThree>
