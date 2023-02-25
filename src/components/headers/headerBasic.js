@@ -5,6 +5,7 @@ import { Container } from "../layoutComponents"
 import { IoMdArrowDropdown } from "react-icons/io"
 import { FaPhone } from "react-icons/fa"
 import { MdLocationOn, MdOutlineEmail } from "react-icons/md"
+import { useMenuQuery } from "../../hooks/useMenuQuery"
 
 import Logo from "../../images/project-landscape-logo-light.svg"
 
@@ -228,6 +229,8 @@ const Burger = styled.div`
 `
 
 export default function HeaderBasic() {
+  const data = useMenuQuery()
+
   const [nav, navOpen] = useState(false)
   const [scrolled, setScrolled] = useState(true)
 
@@ -298,17 +301,25 @@ export default function HeaderBasic() {
                 </ul>
               </Dropdown>
               <Dropdown>
-                <StyledLink to="/services">
+                <StyledLink to="/residential-services">
                   residential
                   <IoMdArrowDropdown size={20} />
                 </StyledLink>
-                <ul>
-                  <li>
-                    <StyledLink to="/services/home-window-repair-calgary">
-                      patio stones
-                    </StyledLink>
-                  </li>
-                </ul>
+                {data.wpMenu.menuItems.nodes.map(mainItem => {
+                  return (
+                    <ul>
+                      {mainItem.childItems.nodes.map(childItem => {
+                        return (
+                          <li key={childItem.id}>
+                            <StyledLink to={childItem.url}>
+                              {childItem.label}
+                            </StyledLink>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )
+                })}
               </Dropdown>
               <li>
                 <StyledLink to="/contact">contact</StyledLink>
