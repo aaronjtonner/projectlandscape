@@ -41,7 +41,7 @@ export default function Ebook(props) {
             <img src={props.img} alt={props.alt} />
           </Img>
           <Bg />
-          <Text className="spacing">
+          <Text className="spacing ">
             <h2 className="title">{props.title}</h2>
             <AnchorPrimary href={props.href} target="_blank">
               request free download
