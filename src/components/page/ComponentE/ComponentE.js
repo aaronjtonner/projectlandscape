@@ -18,6 +18,13 @@ const StyledImg = styled(GatsbyImage)`
 
 const Item = styled.div`
   text-align: center;
+
+  box-shadow: var(--shadow-light);
+  border-radius: var(--br);
+
+  div {
+    padding: 2em;
+  }
 `
 
 export default function ComponentE({ subheader, title, content }) {
@@ -33,18 +40,20 @@ export default function ComponentE({ subheader, title, content }) {
         <GridAuto>
           {content.map(item => {
             return (
-              <Item>
+              <Item className="spacing">
                 <StyledImg
                   image={item.image.localFile.childImageSharp.gatsbyImageData}
                   alt={item.image.altText}
                   s
                 />
-                <h3 className="subheader accent">{item.title}</h3>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: `${item.description}`,
-                  }}
-                />
+                <div>
+                  <h3 className="subheader accent">{item.title}</h3>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: `${item.description}`,
+                    }}
+                  />
+                </div>
               </Item>
             )
           })}

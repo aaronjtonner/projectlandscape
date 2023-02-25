@@ -26,6 +26,12 @@ const SliderItem = styled.div`
   padding: 0.5em;
 `
 
+const StyledImg = styled(GatsbyImage)`
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+`
+
 export default function Carousel({ subheader, title, carouselContent }) {
   const settings = {
     dots: true,
@@ -73,16 +79,18 @@ export default function Carousel({ subheader, title, carouselContent }) {
             {carouselContent.map(item => {
               return (
                 <SliderItem>
-                  <GatsbyImage
+                  <StyledImg
                     image={item.image.localFile.childImageSharp.gatsbyImageData}
                     alt={item.image.altText}
                   />
                   <h3 className="subheader">{item.title}</h3>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: `${item.description}`,
-                    }}
-                  />
+                  {item.description ? (
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: `${item.description}`,
+                      }}
+                    />
+                  ) : null}
                 </SliderItem>
               )
             })}

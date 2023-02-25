@@ -16,7 +16,7 @@ export default function Layout({ children }) {
       <HeaderBasic />
       <main>{children}</main>
       <FaqFeatured />
-      <CtaMain title="call to action title" />
+      <CtaMain title="what's your project?" />
       <Footer />
       <Map />
     </>
