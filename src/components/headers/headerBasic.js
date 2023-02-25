@@ -1,11 +1,21 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { Container } from "../layoutComponents"
+import { Container, Flex } from "../layoutComponents"
 import { IoMdArrowDropdown } from "react-icons/io"
 import { FaPhone } from "react-icons/fa"
 import { MdLocationOn, MdOutlineEmail } from "react-icons/md"
 import { useMenuQuery } from "../../hooks/useMenuQuery"
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react"
 
 import Logo from "../../images/project-landscape-logo-light.svg"
 
@@ -147,28 +157,28 @@ const GetQuote = styled(props => <Link {...props} />)`
 
 const Dropdown = styled.li`
   /* hover display only on desktop */
+
   @media screen and (min-width: ${device.md}) {
-    ul {
+    div {
+      display: ${({ dropdown }) => (dropdown ? "flex" : "none")};
       position: absolute;
+      top: 155px;
+      left: 0;
+      width: 100%;
       z-index: 1000;
-      display: none;
       opacity: 1;
+    }
+    ul {
+      width: 100%;
       margin: 0;
-      padding: 2em 2em 2em 1em;
+      padding: 2em 2em 2em 4em;
       list-style-type: none;
-      background: var(--clr-dark);
+      background: var(--clr-light);
 
       li {
         a {
-          color: var(--txt-light);
+          color: var(--txt-dark);
         }
-      }
-    }
-
-    &:hover {
-      ul {
-        display: flex;
-        flex-direction: column;
       }
     }
   }
@@ -232,10 +242,15 @@ export default function HeaderBasic() {
   const data = useMenuQuery()
 
   const [nav, navOpen] = useState(false)
+  const [dropdown, dropdownOpen] = useState(false)
   const [scrolled, setScrolled] = useState(true)
 
   function toggleMenu() {
     navOpen(!nav)
+  }
+
+  function toggleDropdown() {
+    dropdownOpen(!dropdown)
   }
 
   return (
@@ -287,39 +302,46 @@ export default function HeaderBasic() {
               <div />
             </Burger>
             <NavList nav={nav}>
-              <Dropdown>
-                <StyledLink to="/services">
-                  about
-                  <IoMdArrowDropdown size={20} />
-                </StyledLink>
-                <ul>
-                  <li>
-                    <StyledLink to="/services/home-window-repair-calgary">
-                      about 1
-                    </StyledLink>
-                  </li>
-                </ul>
-              </Dropdown>
-              <Dropdown>
-                <StyledLink to="/residential-services">
+              <li>
+                <StyledLink to="/about">about</StyledLink>
+              </li>
+              <Dropdown dropdown={dropdown} onClick={toggleDropdown}>
+                <StyledLink>
                   residential
                   <IoMdArrowDropdown size={20} />
                 </StyledLink>
-                {data.wpMenu.menuItems.nodes.map(mainItem => {
-                  return (
-                    <ul>
-                      {mainItem.childItems.nodes.map(childItem => {
-                        return (
-                          <li key={childItem.id}>
-                            <StyledLink to={childItem.url}>
-                              {childItem.label}
-                            </StyledLink>
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  )
-                })}
+                <div>
+                  <ul>
+                    <h3 className="subheader">softscaping</h3>
+                    {data.wpMenu.menuItems.nodes.map(mainItem => {
+                      return (
+                        <>
+                          {mainItem.childItems.nodes.map(childItem1 => {
+                            return (
+                              <>
+                                {childItem1.childItems.nodes.map(childItem2 => {
+                                  return (
+                                    <li key={childItem2.id}>
+                                      <StyledLink to={childItem2.url}>
+                                        {childItem2.label}
+                                      </StyledLink>
+                                    </li>
+                                  )
+                                })}
+                              </>
+                            )
+                          })}
+                        </>
+                      )
+                    })}
+                  </ul>
+                  <ul>
+                    <h3 className="subheader">hardscaping</h3>
+                  </ul>
+                  <ul>
+                    <h3 className="subheader">outdoor living</h3>
+                  </ul>
+                </div>
               </Dropdown>
               <li>
                 <StyledLink to="/contact">contact</StyledLink>

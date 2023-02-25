@@ -62,7 +62,7 @@ export default function Banner({ title, subheader, description, image }) {
     <BannerGrid>
       <Wrapper img={image.localFile.childImageSharp.fluid.src}>
         <Container className="spacing">
-          <Flex>
+          {/* <Flex>
             <StaticImage
               src="../../../images/3-best-landscaping-companies-calgary-award-1.svg"
               alt="best landscaping companies calgary award"
@@ -78,7 +78,7 @@ export default function Banner({ title, subheader, description, image }) {
               alt="best landscaping companies calgary award"
               width={100}
             />
-          </Flex>
+          </Flex> */}
           <Text className="spacing">
             <div className="">
               {/* <p className="subheader accent">{subheader}</p> */}

@@ -1,7 +1,7 @@
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
 import styled from "styled-components"
-import { Section, Container, GridThree } from "../../layoutComponents"
+import { Section, Container, GridAuto } from "../../layoutComponents"
 import { ButtonPrimary } from "../../buttons"
 
 const Text = styled.div`
@@ -11,8 +11,9 @@ const Text = styled.div`
   margin-right: auto;
   margin-left: auto;
 `
-const Item = styled.div`
+const Item = styled.h3`
   font-family: var(--ff-gentium);
+  text-align: center;
 `
 
 export default function ComponentD({ subheader, title, content }) {
@@ -25,17 +26,18 @@ export default function ComponentD({ subheader, title, content }) {
             <h2 className="title">{title}</h2>
           </div>
         </Text>
-        <GridThree>
+        <GridAuto>
           {content.map(item => {
             return (
               <Item
+                className="subheader"
                 dangerouslySetInnerHTML={{
                   __html: `${item.text}`,
                 }}
               />
             )
           })}
-        </GridThree>
+        </GridAuto>
         <center>
           <ButtonPrimary to="/contact">talk to us today</ButtonPrimary>
         </center>

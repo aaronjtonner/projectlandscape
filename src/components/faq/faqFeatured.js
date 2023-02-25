@@ -42,16 +42,18 @@ export default function FaqFeatured(props) {
                       flex="1"
                       textAlign="left"
                     >
-                      Section 1 title
+                      What makes project landscape different from other Calgary
+                      landscape contractors?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Project landscape is unique in our aim to work with customers
+                  both residential and commercial. From first contact we can
+                  help you achieve your goal through our virtually unmatched
+                  process; we can complete any size project big or small and
+                  stay on time and within budget.
                 </AccordionPanel>
               </AccordionItem>
 
@@ -64,16 +66,17 @@ export default function FaqFeatured(props) {
                       flex="1"
                       textAlign="left"
                     >
-                      Section 3 title
+                      What is the best way to get started?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Booking a free consultation is the best way to get started. We
+                  can be reached by phone or email and will answer you within 24
+                  hours of point of contact. This will provide an opportunity
+                  for you to sit down with one of our landscape consultants to
+                  discuss your ideas and project in detail.
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem style={AccordionStyle}>
@@ -85,16 +88,15 @@ export default function FaqFeatured(props) {
                       flex="1"
                       textAlign="left"
                     >
-                      Section 4 title
+                      Do you offer a warranty?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Project landscape offers a full warranty on all hardscapes and
+                  softscapes. Our Ironclad warranty program is virtually
+                  unmatched.
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem style={AccordionStyle}>
@@ -106,35 +108,74 @@ export default function FaqFeatured(props) {
                       flex="1"
                       textAlign="left"
                     >
-                      Section 2 title
+                      Is your company licensed and insured?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  We are fully licensed and insured, giving you peace of mind
+                  when work is being carried out. We hold the highest insurance
+                  the industry has to offer. We also are in good standings with
+                  WCB, so all our employees are covered from injury while
+                  working.
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem style={AccordionStyle}>
+                <h2>
+                  <AccordionButton>
+                    <Box
+                      className="subheader"
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                    >
+                      I don’t know much about landscape materials or products,
+                      can you help?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  With such a large selection of materials and products
+                  available, we would recommend you look online at Pintrest or
+                  houzz to get ideas. Also have a look at our website to gather
+                  some more helpful info. Please contact our office for any
+                  other information or links to help you get through the process
+                  easier.
+                </AccordionPanel>
+              </AccordionItem>
+              <AccordionItem style={AccordionStyle}>
+                <h2>
+                  <AccordionButton>
+                    <Box
+                      className="subheader"
+                      as="span"
+                      flex="1"
+                      textAlign="left"
+                    >
+                      What types of services do you offer?
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  Project landscape offers a wide variety of services to meet
+                  both residential and commercial properties. From property
+                  maintenance, fertilizer and weed control programs, full
+                  service parking lot maintenance, irrigation system services to
+                  snow and ice management.
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
             <div className="spacing">
-              <h2 className="title">title</h2>
+              <h2 className="title">have burning landscaping questions</h2>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Aliquam hic magnam id suscipit, ducimus esse quo laboriosam
-                molestiae harum, natus odio voluptatum illo rem doloremque.
-                Temporibus asperiores maxime neque facere, delectus quod
-                suscipit, unde sed iste quasi perspiciatis corporis non ab velit
-                nihil officiis. Itaque labore incidunt dignissimos excepturi
-                vitae libero tempora alias quia fugit neque nisi veniam suscipit
-                voluptatum dolorum ratione, dolores vero maiores placeat nostrum
-                deleniti ipsum necessitatibus minima. Eligendi provident ad quo
-                deserunt inventore esse placeat fuga tempora sequi. Magnam
-                assumenda porro corrupti modi debitis voluptatum est
-                voluptatibus repellat dolorum neque eligendi ipsam ratione,
-                consectetur tempore soluta.
+                At Project Landscape Ltd., our premier landscaping services will
+                increase the value and overall aesthetic of your home. We use
+                quality brands, and unique products to help keep your lawn
+                healthy, and your home looking incredible. This means an overall
+                better living experience for you and your family.
               </p>
               <ButtonSecondaryLight to="/contact">
                 book a service

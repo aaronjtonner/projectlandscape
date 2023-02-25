@@ -51,7 +51,7 @@ export default function ProcessB({ title, subheader, body, processContent }) {
     <Section>
       <GridWrapper>
         <Bg />
-        <Bottom className="spacing-md">
+        <Bottom className="spacing">
           <Text className="spacing">
             <Container className="spacing">
               <div>

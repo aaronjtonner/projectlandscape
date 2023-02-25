@@ -1,4 +1,5 @@
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { Container } from "../layoutComponents"
@@ -11,6 +12,7 @@ import { FaPhone, FaRegClock } from "react-icons/fa"
 import { MdLocationOn, MdOutlineEmail } from "react-icons/md"
 import FormFooter from "../forms/formFooter"
 import { Info } from "../info"
+import { useMenuQuery } from "../../hooks/useMenuQuery"
 
 const device = {
   md: "48em",
@@ -147,10 +149,27 @@ const Copyright = styled.div`
   }
 `
 
+const PageLinks = styled.div`
+  color: var(--txt-light);
+`
+
+const StyledLink = styled(props => <Link {...props} />)`
+  text-transform: capitalize;
+  color: var(--txt-light);
+  font-weight: var(--fw-400);
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+`
+
 export default function Footer() {
+  const data = useMenuQuery()
   return (
     <FooterWrapper>
-      <Container className="spacing">
+      <Container className="spacing-lg">
         <Flex>
           <Flex>
             <div className="spacing">
@@ -246,6 +265,52 @@ export default function Footer() {
           </div>
         </Flex>
         <hr />
+        <PageLinks>
+          <Flex>
+            <div>
+              <h3 className="subheader">Residential Services</h3>
+              <ul>
+                {data.wpMenu.menuItems.nodes.map(mainItem => {
+                  return (
+                    <>
+                      {mainItem.childItems.nodes.map(childItem1 => {
+                        return (
+                          <>
+                            {childItem1.childItems.nodes.map(childItem2 => {
+                              return (
+                                <li key={childItem2.id}>
+                                  <StyledLink to={childItem2.url}>
+                                    {childItem2.label}
+                                  </StyledLink>
+                                </li>
+                              )
+                            })}
+                          </>
+                        )
+                      })}
+                    </>
+                  )
+                })}
+              </ul>
+            </div>
+            <div>
+              <h3 className="subheader">Commercial Services</h3>
+              <ul></ul>
+            </div>
+            <div>
+              <h3 className="subheader">Company information</h3>
+              <ul>
+                <li>
+                  <StyledLink to="/about">About</StyledLink>
+                </li>
+                {/* <li><StyledLink to="/">Material Selection</StyledLink></li> */}
+                <li>
+                  <StyledLink to="/gallery">Gallery</StyledLink>
+                </li>
+              </ul>
+            </div>
+          </Flex>
+        </PageLinks>
         <Copyright>
           <ul>
             <li>Copyright&#169; 2023</li>
